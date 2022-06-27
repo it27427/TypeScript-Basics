@@ -11,3 +11,14 @@ const sayHello = (user) => {
     console.log(`Hello ${user.age > 40 ? 'Sir' : 'Mr.'} ${user.name}`);
 };
 // Function Signatures
+let add;
+add = (a, b) => a + b;
+console.log(add(4, 5));
+let userDescriptions;
+userDescriptions = (id, user) => {
+    console.log(`${id} ${user.name} ${user.age}`);
+};
+userDescriptions(123, {
+    name: 'Tushar',
+    age: 29
+});
