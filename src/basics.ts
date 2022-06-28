@@ -42,22 +42,9 @@ userDescriptions(123, {
   age: 29
 });
 
-// CLASS
-class Player {
-  name: string;
-  age: number;
-  country: string;
+// IMPORT PLAYER
+import { Player } from './classes/Player.js';
 
-  constructor(name: string, age: number, country: string) {
-    this.name = name;
-    this.age = age;
-    this.country = country;
-  }
-
-  play() {
-    console.log(`${this.name} from ${this.country} and age is ${this.age}`);
-  }
-}
 
 const mashrafi = new Player('Mashrafi', 40, 'Bangladesh');
 const sakib = new Player('Shakib', 38, 'Bangladesh');
@@ -71,3 +58,37 @@ players.push(sakib);
 players.push(mashrafi);
 
 console.log(players);
+
+// Interfaces
+interface rectangleOptions {
+  width: number;
+  length: number;
+}
+
+function drowRectangle(options: rectangleOptions) {
+  let width = options.width;
+  let length = options.length;
+}
+
+const drowResult = drowRectangle({
+  width: 30,
+  length: 20
+});
+
+console.log(drowResult);
+
+
+import { isPlayer } from './interfaces/isPlayer.js';
+
+let sakibAl: isPlayer;
+
+sakibAl = new Player('Sakib-Al-Hasan', 39, 'Bangladesh');
+
+console.log(sakibAl);
+
+const allPlayer: isPlayer[] = [];
+
+allPlayer.push(sakib);
+allPlayer.push(mashrafi);
+allPlayer.push(sakibAl);
+

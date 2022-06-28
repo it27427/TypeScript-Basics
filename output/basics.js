@@ -1,4 +1,3 @@
-"use strict";
 const square = (n1, n2) => {
     return n1 ** n2;
 };
@@ -22,17 +21,8 @@ userDescriptions(123, {
     name: 'Tushar',
     age: 29
 });
-// CLASS
-class Player {
-    constructor(name, age, country) {
-        this.name = name;
-        this.age = age;
-        this.country = country;
-    }
-    play() {
-        console.log(`${this.name} from ${this.country} and age is ${this.age}`);
-    }
-}
+// IMPORT PLAYER
+import { Player } from './classes/Player.js';
 const mashrafi = new Player('Mashrafi', 40, 'Bangladesh');
 const sakib = new Player('Shakib', 38, 'Bangladesh');
 // console.log(mashrafi.play());
@@ -41,3 +31,19 @@ const players = [];
 players.push(sakib);
 players.push(mashrafi);
 console.log(players);
+function drowRectangle(options) {
+    let width = options.width;
+    let length = options.length;
+}
+const drowResult = drowRectangle({
+    width: 30,
+    length: 20
+});
+console.log(drowResult);
+let sakibAl;
+sakibAl = new Player('Sakib-Al-Hasan', 39, 'Bangladesh');
+console.log(sakibAl);
+const allPlayer = [];
+allPlayer.push(sakib);
+allPlayer.push(mashrafi);
+allPlayer.push(sakibAl);
