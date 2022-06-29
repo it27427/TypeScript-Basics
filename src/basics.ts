@@ -92,3 +92,51 @@ allPlayer.push(sakib);
 allPlayer.push(mashrafi);
 allPlayer.push(sakibAl);
 
+// Generics
+const addID = <T extends {
+  name: string,
+  age: number,
+  country: string
+}>(obj: T) => {
+  let id = Math.floor(Math.random() * 100 + 1);
+  return { ...obj, id }
+}
+
+let myUser = addID({
+  name: 'Istiak',
+  age: 29,
+  country: 'Bangladesh'
+});
+
+console.log(myUser.id);
+console.log(myUser.name);
+console.log(myUser.age);
+console.log(myUser.country);
+console.log(myUser);
+
+
+// Enum Types
+enum ResponseType { SUCCESS, FAILURE, UNAUTHENTICATED, FORBIDDEN };
+
+interface APIresponse<T> {
+  state: number;
+  type: ResponseType;
+  data: T;
+}
+
+const response1: APIresponse<object> = {
+  state: 200,
+  type: ResponseType.UNAUTHENTICATED,
+  data: {
+    name: 'Tushar',
+    age: 29
+  }
+};
+
+console.log(response1);
+
+// Tuples
+
+let a = ['IT', 29, {p: 2}];
+
+let b: [number, string, object] = [2, 'Tushar', {name: 'Nishi'}]

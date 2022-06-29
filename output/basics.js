@@ -47,3 +47,39 @@ const allPlayer = [];
 allPlayer.push(sakib);
 allPlayer.push(mashrafi);
 allPlayer.push(sakibAl);
+// Generics
+const addID = (obj) => {
+    let id = Math.floor(Math.random() * 100 + 1);
+    return Object.assign(Object.assign({}, obj), { id });
+};
+let myUser = addID({
+    name: 'Istiak',
+    age: 29,
+    country: 'Bangladesh'
+});
+console.log(myUser.id);
+console.log(myUser.name);
+console.log(myUser.age);
+console.log(myUser.country);
+console.log(myUser);
+// Enum Types
+var ResponseType;
+(function (ResponseType) {
+    ResponseType[ResponseType["SUCCESS"] = 0] = "SUCCESS";
+    ResponseType[ResponseType["FAILURE"] = 1] = "FAILURE";
+    ResponseType[ResponseType["UNAUTHENTICATED"] = 2] = "UNAUTHENTICATED";
+    ResponseType[ResponseType["FORBIDDEN"] = 3] = "FORBIDDEN";
+})(ResponseType || (ResponseType = {}));
+;
+const response1 = {
+    state: 200,
+    type: ResponseType.UNAUTHENTICATED,
+    data: {
+        name: 'Tushar',
+        age: 29
+    }
+};
+console.log(response1);
+// Tuples
+let a = ['IT', 29, { p: 2 }];
+let b = [2, 'Tushar', { name: 'Nishi' }];
